@@ -25,6 +25,7 @@ if (empty($_SESSION['user_info'])) {
     if (empty($result)) {
         // VULN：XSS注入
         // payload：<script>alert('xss')</script>
+        // 防御：htmlspecialchars()
         echo <<<EOF
         <div class="good">
             <img src="img/goods/default.svg" class="pic">
